@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<condiciones tipo="meteorologicas">
+    <fecha>10-4-2019</fecha>
+    <hora>10 a.m</hora>
+    <lluvia>true</lluvia>
+    <viento>false</viento>
+    <temperatura>10</temperatura>
+    <presion></presion>
+    <coordenadas>
+        <norte>41°24'12.2</norte>
+        <sur></sur>
+        <este>2°10'26.5</este>
+        <oeste></oeste>
+    </coordenadas>
+    <lugar>Madrid</lugar>
+</condiciones>

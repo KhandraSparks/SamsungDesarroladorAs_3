@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {},
+    "files": [
+      "Mail.ts",
+      "Telefono.ts",
+      "Direccion.ts",
+      "Persona.ts",
+      "main.ts",
+    ]
+  }
