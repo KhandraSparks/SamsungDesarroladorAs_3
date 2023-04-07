@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<supermercados>
+  <supermercado1>
+    <IDSuper>M1</IDSuper>
+    <nombre>Mercadona</nombre>
+    <direccion>
+      <calle>Calle Nuñez de la Peña, s/n</calle>
+      <codigoPostal>38203</codigoPostal>
+      <ciudad>La Laguna</ciudad>
+      <provincia>Santa Cruz de Tenerife</provincia>
+      <pais>España</pais>
+    </direccion>
+    <geoloc>https://goo.gl/maps/nupRHxmz5rWeURAt5</geoloc>
+  </supermercado1>
+  <supermercado1>
+    <seccion>carniceria</seccion>
+    <productos>
+      <nombre>Carne Picada Mixta</nombre>
+      <descripcion>Preparado de carne picada vacuno y cerdo</descripcion>
+      <marca>Siete Islas</marca>
+      <cantidadGramos>500</cantidadGramos>
+      <pvp>4.48</pvp>
+      <pvpKg>8.96</pvpKg>
+      <pvpOferta>2.24</pvpOferta>
+      <pvpKgOferta>4.48</pvpKgOferta>
+      <periodoVigenciaOferta>
+        <inicio>05/04/2023</inicio>
+        <fin>15/04/2023</fin>
+      </periodoVigenciaOferta>
+      <vigenteOferta>true</vigenteOferta>
+      <habitual>true</habitual>
+      <adquirido>true</adquirido>
+    </productos>
+    <productos>
+      <nombre>Contramuslos Pollo</nombre>
+      <descripcion>Contramuslos deshuesados de pollo sin piel</descripcion>
+      <marca>Siete Islas</marca>
+      <cantidadGramos>650</cantidadGramos>
+      <pvp>5.53</pvp>
+      <pvpKg>8.5</pvpKg>
+      <pvpOferta>4.87</pvpOferta>
+      <pvpKgOferta>7.49</pvpKgOferta>
+      <periodoVigenciaOferta>
+        <inicio>09/02/2023</inicio>
+        <fin>12/02/2023</fin>
+      </periodoVigenciaOferta>
+      <vigenteOferta>false</vigenteOferta>
+      <habitual>true</habitual>
+      <adquirido>true</adquirido>
+    </productos>
+    <productos>
+      <nombre>Secreto Cerdo</nombre>
+      <descripcion>Filete secreto cerdo blanco fresco</descripcion>
+      <marca>Sediatlantic</marca>
+      <cantidadGramos>500</cantidadGramos>
+      <pvp>3.5</pvp>
+      <pvpKg>6.99</pvpKg>
+      <pvpOferta>3.15</pvpOferta>
+      <pvpKgOferta>6.3</pvpKgOferta>
+      <periodoVigenciaOferta>
+        <inicio>05/04/2023</inicio>
+        <fin>15/04/2023</fin>
+      </periodoVigenciaOferta>
+      <vigenteOferta>true</vigenteOferta>
+      <habitual>true</habitual>
+      <adquirido>true</adquirido>
+    </productos>
+  </supermercado1>
+  <supermercado1>
+    <seccion>fruteria</seccion>
+    <productos>
+      <nombre>Arandanos</nombre>
+      <descripcion>Tarrina de arandanos frescos</descripcion>
+      <marca>Driscoll's</marca>
+      <cantidadGramos>500</cantidadGramos>
+      <pvp>6.35</pvp>
+      <pvpKg>12.7</pvpKg>
+      <pvpOferta>5.72</pvpOferta>
+      <pvpKgOferta>11.43</pvpKgOferta>
+      <periodoVigenciaOferta>
+        <inicio>01/01/2023</inicio>
+        <fin>08/01/2023</fin>
+      </periodoVigenciaOferta>
+      <vigenteOferta>false</vigenteOferta>
+      <habitual>false</habitual>
+      <adquirido>false</adquirido>
+    </productos>
+    <productos>
+      <nombre>Limon Malla 1KG</nombre>
+      <descripcion>Limon malla de kilo</descripcion>
+      <marca>Chapeau</marca>
+      <cantidadGramos>1000</cantidadGramos>
+      <pvp>1.99</pvp>
+      <pvpKg>1.99</pvpKg>
+      <pvpOferta>1.75</pvpOferta>
+      <pvpKgOferta>1.75</pvpKgOferta>
+      <periodoVigenciaOferta>
+        <inicio>09/03/2023</inicio>
+        <fin>12/03/2023</fin>
+      </periodoVigenciaOferta>
+      <vigenteOferta>false</vigenteOferta>
+      <habitual>true</habitual>
+      <adquirido>true</adquirido>
+    </productos>
+    <productos>
+      <nombre>Manzana Golden malla 1.5KG</nombre>
+      <descripcion>Manzana golden en malla de 1.5kg aprox</descripcion>
+      <marca>Frutas Patricia Pilar</marca>
+      <cantidadGramos>1500</cantidadGramos>
+      <pvp>2.38</pvp>
+      <pvpKg>1.59</pvpKg>
+      <pvpOferta>2</pvpOferta>
+      <pvpKgOferta>1.33</pvpKgOferta>
+      <periodoVigenciaOferta>
+        <inicio>05/04/2023</inicio>
+        <fin>15/04/2023</fin>
+      </periodoVigenciaOferta>
+      <vigenteOferta>true</vigenteOferta>
+      <habitual>false</habitual>
+      <adquirido>true</adquirido>
+    </productos>
+  </supermercado1>
+</supermercados>

@@ -1,0 +1,222 @@
+{
+    "supermercado1": [
+        {
+            "IDSuper":"M1",
+            "nombre": "Mercadona",
+            "direccion": {
+                "calle":"Calle Nuñez de la Peña, s/n",
+                "codigoPostal":"38203",
+                "ciudad":"La Laguna",
+                "provincia":"Santa Cruz de Tenerife",
+                "pais":"España"
+            },
+            "geoloc": "https://goo.gl/maps/nupRHxmz5rWeURAt5"
+        },
+        {
+            "seccion": "carniceria",
+            "productos": [
+                {
+                    "nombre": "Carne Picada Mixta",
+                    "descripcion": "Preparado de carne picada vacuno y cerdo",
+                    "marca":"Siete Islas",
+                    "cantidadGramos":500,
+                    "pvp":4.48,
+                    "pvpKg":8.96,
+                    "pvpOferta":2.24,
+                    "pvpKgOferta":4.48,
+                    "periodoVigenciaOferta":{
+                        "inicio":"05/04/2023",
+                        "fin":"15/04/2023"
+                    },
+                    "vigenteOferta": true,
+                    "habitual": true,
+                    "adquirido": true
+                },
+                {
+                    "nombre": "Contramuslos Pollo",
+                    "descripcion": "Contramuslos deshuesados de pollo sin piel",
+                    "marca":"Siete Islas",
+                    "cantidadGramos":650,
+                    "pvp":5.53,
+                    "pvpKg":8.50,
+                    "pvpOferta":4.87,
+                    "pvpKgOferta":7.49,
+                    "periodoVigenciaOferta":{
+                        "inicio":"09/02/2023",
+                        "fin":"12/02/2023"
+                    },
+                    "vigenteOferta": false,
+                    "habitual": true,
+                    "adquirido": true
+                },
+                {
+                    "nombre": "Secreto Cerdo",
+                    "descripcion": "Filete secreto cerdo blanco fresco",
+                    "marca":"Sediatlantic",
+                    "cantidadGramos":500,
+                    "pvp":3.50,
+                    "pvpKg":6.99,
+                    "pvpOferta":3.15,
+                    "pvpKgOferta":6.30,
+                    "periodoVigenciaOferta":{
+                        "inicio":"05/04/2023",
+                        "fin":"15/04/2023"
+                    },
+                    "vigenteOferta": true,
+                    "habitual": true,
+                    "adquirido": true
+                }
+            ]
+        },
+        {
+            "seccion": "fruteria",
+            "productos": [
+                {
+                    "nombre": "Arandanos",
+                    "descripcion": "Tarrina de arandanos frescos",
+                    "marca":"Driscoll's",
+                    "cantidadGramos":500,
+                    "pvp":6.35,
+                    "pvpKg":12.70,
+                    "pvpOferta":5.72,
+                    "pvpKgOferta":11.43,
+                    "periodoVigenciaOferta":{
+                        "inicio":"01/01/2023",
+                        "fin":"08/01/2023"
+                    },
+                    "vigenteOferta": false,
+                    "habitual": false,
+                    "adquirido": false
+                },
+                {
+                    "nombre": "Limon Malla 1KG",
+                    "descripcion": "Limon malla de kilo",
+                    "marca":"Chapeau",
+                    "cantidadGramos":1000,
+                    "pvp":1.99,
+                    "pvpKg":1.99,
+                    "pvpOferta":1.75,
+                    "pvpKgOferta":1.75,
+                    "periodoVigenciaOferta":{
+                        "inicio":"09/03/2023",
+                        "fin":"12/03/2023"
+                    },
+                    "vigenteOferta": false,
+                    "habitual": true,
+                    "adquirido": true
+                },
+                {
+                    "nombre": "Manzana Golden malla 1.5KG",
+                    "descripcion": "Manzana golden en malla de 1.5kg aprox",
+                    "marca":"Frutas Patricia Pilar",
+                    "cantidadGramos":1500,
+                    "pvp":2.38,
+                    "pvpKg":1.59,
+                    "pvpOferta":2.00,
+                    "pvpKgOferta":1.33,
+                    "periodoVigenciaOferta":{
+                        "inicio":"05/04/2023",
+                        "fin":"15/04/2023"
+                    },
+                    "vigenteOferta": true,
+                    "habitual": false,
+                    "adquirido": true
+                }
+            ]
+        }
+    ],
+
+    "supermercado2": [
+        {
+            "IDSuper":"L1",
+            "nombre": "Lidl",
+            "direccion": {
+                "calle":"Calle Ntra. Sra. de la Ternura, s/n",
+                "codigoPostal":"38108",
+                "ciudad":"La Laguna",
+                "provincia":"Santa Cruz de Tenerife",
+                "pais":"España"
+            },
+            "geoloc": "https://goo.gl/maps/kgx1yZFxPxBybPicA"
+        },
+        {
+            "seccion": "carniceria",
+            "productos": [
+                {
+                    "nombre": "Churrasco de vacuno añojo",
+                    "descripcion": "Churrasco de vacuno añojo bandeja",
+                    "marca":"Siete Islas",
+                    "cantidadGramos":600,
+                    "pvp":6.29,
+                    "pvpKg":10.49,
+                    "pvpOferta":5.09,
+                    "pvpKgOferta":8.49,
+                    "periodoVigenciaOferta":{
+                        "inicio":"06/04/2023",
+                        "fin":"20/04/2023"
+                    },
+                    "vigenteOferta": true,
+                    "habitual": true,
+                    "adquirido": true
+                },
+                {
+                    "nombre": "Longaniza cerdo iberico",
+                    "descripcion": "Longaniza cerdo iberico fresca",
+                    "marca":"DeRaza",
+                    "cantidadGramos":350,
+                    "pvp":3.49,
+                    "pvpKg":9.97,
+                    "pvpOferta":2.69,
+                    "pvpKgOferta":7.69,
+                    "periodoVigenciaOferta":{
+                        "inicio":"06/04/2023",
+                        "fin":"09/04/2023"
+                    },
+                    "vigenteOferta": true,
+                    "habitual": true,
+                    "adquirido": true
+                }
+            ]
+        },
+        {
+            "seccion": "fruteria",
+            "productos": [
+                {
+                    "nombre": "Uva blanca",
+                    "descripcion": "Uva blanca sin semillas",
+                    "marca":"",
+                    "cantidadGramos":500,
+                    "pvp":2.69,
+                    "pvpKg":5.38,
+                    "pvpOferta":1.99,
+                    "pvpKgOferta":3.98,
+                    "periodoVigenciaOferta":{
+                        "inicio":"06/04/2023",
+                        "fin":"09/04/2023"
+                    },
+                    "vigenteOferta": true,
+                    "habitual": false,
+                    "adquirido": false
+                },
+                {
+                    "nombre": "Naranja malla 1kg",
+                    "descripcion": "Naranja malla 1kg",
+                    "marca":"",
+                    "cantidadGramos":1000,
+                    "pvp":1.59,
+                    "pvpKg":1.59,
+                    "pvpOferta":1.09,
+                    "pvpKgOferta":1.09,
+                    "periodoVigenciaOferta":{
+                        "inicio":"06/04/2023",
+                        "fin":"09/04/2023"
+                    },
+                    "vigenteOferta": true,
+                    "habitual": true,
+                    "adquirido": false
+                }
+            ]
+        }
+    ]
+    
+}
