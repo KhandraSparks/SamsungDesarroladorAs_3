@@ -1,0 +1,64 @@
+<!-- //TODO:
+1- Web para subir un archivo con API file
+2- popup cargando video
+3- botones personalizados control video (reproducir, pausa, subir bajar volumen) con API media
+NOTAS: subir bajar volumen minimo 0.1, -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tarea APIs - Naomi A.W.</title>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="./main.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="./styles.css">
+        <!-- Font Awesome: -->
+        <script src="https://kit.fontawesome.com/6999a15d62.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="vidContainer">
+            <div id="mockVid" class="mockVid">
+                <div class="vidSymbol">
+                    <i class="fa-regular fa-circle-play fa-2xl"></i>
+                </div>
+            </div>
+            <div class="botonera">
+                <div class="playbackControls">
+                    <button><i class="fa-solid fa-backward"></i></button>
+                    <button><i class="fa-solid fa-play"></i></button>
+                    <button><i class="fa-solid fa-pause"></i></button>
+                    <button><i class="fa-solid fa-forward"></i></button>
+                </div>
+                <div class="audioControls">
+                    <button><i class="fa-solid fa-volume-low"></i></button>
+                    <button><i class="fa-solid fa-volume-high"></i></button>
+                    <button><i class="fa-solid fa-volume-xmark"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="selectFile">
+            <h1>Selecciona el video que quieres reproducir</h1>
+            <input 
+                type="file" 
+                id="vidPicker"
+                name="vidPicker"
+                accept=".mp4, .webm, .ogg"
+            >
+        </div>
+
+        
+        
+        <br>        <br>        <br>        <br>
+        <div>
+            <i class="fa-regular fa-circle-play fa-beat"></i>
+            
+            <i class="fa-regular fa-circle-pause"></i>
+            <!-- Cuando carga: -->
+            <i class="fa-solid fa-spinner fa-spin-pulse"></i>
+        </div>
+    </body>
+    <footer>
+        <details>
+            <summary>Créditos</summary>
+            <a href="https://www.vecteezy.com/video/4444665-abstract-ang-blurry-dual-color-gradient-background-with-liquid-style-waves-featured-violet-and-blue-seamless-looping-video">Abstract ang blurry dual color gradient background with liquid style waves featured violet and blue. Seamless looping video. Stock Videos by Vecteezy</a>
+        </details>
+    </footer>
+</html>
