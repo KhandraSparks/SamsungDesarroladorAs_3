@@ -10,6 +10,7 @@
     background-image: url(./assets/blurgif.gif);
     background-size: cover;
     max-height: 600px;
+    border: none;
 }
 
 .vidSymbol{
@@ -33,12 +34,14 @@
 
 .botonera{
     background-color: rgb(0, 0, 0);
-    display: block;
-    padding: 5px;
+    height: 5cqw;
+    vertical-align: middle;
+    margin: auto;
 }
 .playbackControls{
     display: inline;
 }
+
 .audioControls{
     display: inline;
 }
@@ -47,6 +50,13 @@ button{
     color: rgb(255, 255, 255);
     background: none;
     border: none;
+    font-size: 2cqw;
+    margin-top: 5px;
+}
+
+button:hover{
+    color: rgb(126, 38, 158);
+    text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
 }
 
 
