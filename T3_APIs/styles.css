@@ -1,16 +1,19 @@
-.vidContainer{
-    aspect-ratio: 16/9;
-    border: 2px solid green;
-}
 
-.mockVid{
-    aspect-ratio: 16/9;
-    container-type: inline-size;
+.vidContainer{
     background-color: rgb(20, 2, 47);
     background-image: url(./assets/blurgif.gif);
     background-size: cover;
-    max-height: 600px;
-    border: none;
+    margin: auto;
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.vidContainer:hover{
+    cursor: pointer;
 }
 
 .vidSymbol{
@@ -19,47 +22,86 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 10cqw;
+    font-size: 250%;
     text-align: center;
     color: white;
 }
-.vidSymbol:hover{
-    font-size: 12cqw;
-    transition-duration: 250ms;
+
+#msg{
+    font-size: medium;
 }
 
+/* Hid file picker */
 .selectFile{
-    display: block;
+    display: none;
 }
+
 
 .botonera{
-    background-color: rgb(0, 0, 0);
-    height: 5cqw;
-    vertical-align: middle;
-    margin: auto;
-}
-.playbackControls{
-    display: inline;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
 }
 
-.audioControls{
+#volumeSliderContainer{
     display: inline;
+    align-content: right;
 }
+
+.botonera button{
+    font-weight: bolder;
+    text-shadow: 1px 2px 2px #000;
+}
+
+#volumeSlider{
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+
+
 
 button{
     color: rgb(255, 255, 255);
     background: none;
     border: none;
-    font-size: 2cqw;
     margin-top: 5px;
 }
 
 button:hover{
-    color: rgb(126, 38, 158);
-    text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+    cursor: pointer;
 }
 
 
 body{
     padding: 5%;
 }
+
+
+/* @media screen and (orientation: landscape){
+    .vidContainer{
+        min-width: 80vw;
+        width:fit-content;
+
+    }
+    summary{
+        color:red
+    }
+    #video{
+        width: 100%;
+    }
+}
+@media screen and (orientation: portrait){
+    .vidContainer{
+        max-height: 100vh;
+        width:fit-content;
+    }
+    #video{
+        width:max-content;
+        max-width: 100%;
+    }
+    summary{
+        color:blue
+    }
+} */
