@@ -36,10 +36,10 @@
     display: none;
 }
 
-
 .botonera{
     position: absolute;
-    bottom: 10px;
+    bottom: 3%;
+    left: 2%;
     width: 100%;
     display: flex;
 }

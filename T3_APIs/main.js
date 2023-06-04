@@ -15,6 +15,8 @@ if (window.File && window.FileReader && window.FileList) {
     const volumeSliderContainer = document.getElementById("volumeSliderContainer");
     const volumeSlider = document.getElementById("volumeSlider");
     const displayMsg = document.getElementById("msg");
+    const blackoutLevel = "brightness(60%)";
+    const noBlackout = "brightness(100%)";
 
 // Icon classes in fontawesome
     const playClass='fa-solid fa-play';
@@ -26,12 +28,13 @@ if (window.File && window.FileReader && window.FileList) {
     const uploadClass='fa-solid fa-file-arrow-up';
     const uploadBeatClass='fa-solid fa-file-arrow-up fa-beat';
     const playCircleBeatClass='fa-regular fa-circle-play fa-beat';
-    const pauseCircleClass='fa-regular fa-circle-pause';
+    const pauseCircleClass='fa-regular fa-circle-pause fa-beat';
     const loadingClass='fa-solid fa-spinner fa-spin-pulse';
 
 
-// Adjust initial status of big icon
+// Adjust initial status of icon and vidPlayer
     adjustCurrentIcon();
+    setVideoPlayerSize();
 
 // Listen for change on file-picker
     vidPicker.addEventListener("change", () => {
@@ -46,6 +49,8 @@ if (window.File && window.FileReader && window.FileList) {
         // Add display message:
             displayMsg.innerText="Cargando";
             displayMsg.style.display="block";
+        // Blackout
+            vidPlayer.style.filter = blackoutLevel;
         // Remove pointer events
             vidContainer.style.pointerEvents = "none";
         // Gray out buttons
@@ -76,13 +81,11 @@ function setVideoPlayerSize(){
     // if video loaded and wider than tall
     if (vidPlayer.videoWidth>vidPlayer.videoHeight) {
         console.log("video is wide");
-        vidContainer.style.minWidth="80vw";
         vidContainer.style.width="fit-content";
         vidPlayer.style.width="100%";
         vidPlayer.style.maxHeight="80vh";
     }
     if (vidPlayer.videoWidth<=vidPlayer.videoHeight) {
-        // if video loaded and taller than wide
         console.log("video is tall");
         vidContainer.style.width="fit-content";
         vidPlayer.style.maxHeight="80vh";
@@ -94,12 +97,14 @@ function setVideoPlayerSize(){
         if (vidPlayer.videoWidth>vidPlayer.videoHeight) {
             console.log("video is wide")
             vidContainer.style.maxWidth="100vw";
+            vidContainer.style.width="fit-content";
             vidPlayer.style.width="100%";
         }
         if (vidPlayer.videoWidth<=vidPlayer.videoHeight) {
             // if video loaded and taller than wide
             console.log("video is tall")
             vidContainer.style.maxHeight="100vh";
+            vidContainer.style.width="fit-content";
             vidPlayer.style.height="100%";
         }
     }
@@ -115,11 +120,13 @@ function setVideoPlayerSize(){
         setColor(controlButtons,"white");
         setPointer(controlButtons,"auto");
         vidContainer.style.pointerEvents = "auto";
+    //Remove video blackout effect
+        vidPlayer.style.filter = noBlackout;
     };
 
     // Listen for click events
     vidPlayer.addEventListener("click", handleClick);
-    vidSymbol.addEventListener("click",handleClick);
+    vidSymbol.addEventListener("click", handleClick);
 
     // If no video, file picker, if video present then toggle play/pause
     function handleClick(){
@@ -148,7 +155,6 @@ function setVideoPlayerSize(){
             adjustCurrentIcon();
             };
         vidPicker.click();
-
     });
     playBtn.addEventListener("click", () => {playToggle(); adjustCurrentIcon();});
     volumeBtn.addEventListener("click", () => {
@@ -166,10 +172,10 @@ function setVideoPlayerSize(){
     volumeBtn.addEventListener("mouseenter", ()=>{
         volumeSlider.style.opacity= 1;
         volumeSlider.style.visibility= "visible";
-        audioControls.addEventListener("mouseleave", ()=>{
-            volumeSlider.style.opacity= 0;
-            volumeSlider.style.visibility= "hidden";
-        })
+    });
+    audioControls.addEventListener("mouseleave", ()=>{
+        volumeSlider.style.opacity= 0;
+        volumeSlider.style.visibility= "hidden";
     });
 
 // Using range input to control media volume:
@@ -200,8 +206,9 @@ function setVideoPlayerSize(){
         break;
     }};
 
-// Handling big video icon logic:
+// Handling big video icon logic, blackout logic, etc.:
     function adjustCurrentIcon(){
+        console.log(vidPlayer.readyState);
         switch (true) {
             // If no vid loaded
             case vidPlayer.readyState==0:
@@ -220,6 +227,8 @@ function setVideoPlayerSize(){
                 currentIcon.className = playCircleBeatClass;
                 //change control icon
                 playBtn.firstChild.className = playClass;
+                //blackout
+                vidPlayer.style.filter = blackoutLevel;
                 break;
             // If vid playing
             case vidPlayer.readyState==4 && !vidPlayer.paused:
@@ -227,6 +236,9 @@ function setVideoPlayerSize(){
                 playBtn.firstChild.className = pauseClass;
                 //no visible icon
                 currentIcon.style.display = "none";
+                currentIcon.className = pauseCircleClass;
+                // no blackout
+                vidPlayer.style.filter = noBlackout;
                 break;
             default:
                 currentIcon.style.display = "none";
@@ -234,8 +246,20 @@ function setVideoPlayerSize(){
         }
     };
 
-// TODO: On hover switch to pause icon, visible, add transparent black out div
+
 // If video playing, on mouseenter show pause icon, on mouseleave adjust play icon
+vidContainer.onmouseenter = function(event) {
+    if (vidPlayer.readyState==4 && !vidPlayer.paused){
+        vidPlayer.style.filter = blackoutLevel;
+        currentIcon.style.display= "block";
+    }
+};
+vidContainer.onmouseleave = function(event) {
+    if (vidPlayer.readyState==4 && !vidPlayer.paused){
+        vidPlayer.style.filter = noBlackout;
+        currentIcon.style.display= "none";
+    }
+};
 
 
 // Setting color of video control buttons
