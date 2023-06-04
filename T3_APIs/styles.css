@@ -79,29 +79,21 @@ body{
 }
 
 
-/* @media screen and (orientation: landscape){
-    .vidContainer{
-        min-width: 80vw;
-        width:fit-content;
-
-    }
-    summary{
-        color:red
-    }
-    #video{
-        width: 100%;
-    }
+#otherVids{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
 }
-@media screen and (orientation: portrait){
-    .vidContainer{
-        max-height: 100vh;
-        width:fit-content;
-    }
-    #video{
-        width:max-content;
-        max-width: 100%;
-    }
-    summary{
-        color:blue
-    }
-} */
+h3{
+    display: block;
+    flex-basis: 100%;
+}
+.thumbnail{
+    width: 10vw;
+    margin-right: 2vw;
+    display: flex;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}

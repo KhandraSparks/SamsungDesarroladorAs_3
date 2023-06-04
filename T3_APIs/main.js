@@ -34,7 +34,6 @@ if (window.File && window.FileReader && window.FileList) {
 
 // Adjust initial status of icon and vidPlayer
     adjustCurrentIcon();
-    setVideoPlayerSize();
 
 // Listen for change on file-picker
     vidPicker.addEventListener("change", () => {
@@ -43,26 +42,8 @@ if (window.File && window.FileReader && window.FileList) {
         const fileExtension = vidFile.type.split('/')[1];
     // Check if file has correct extension
         if (fileExtension=="mp4" || fileExtension=="webm"  || fileExtension=="ogg" ) {
-            vidPlayer.src = vidURL;
-        // Change into loading icon
-            currentIcon.className = loadingClass;
-        // Add display message:
-            displayMsg.innerText="Cargando";
-            displayMsg.style.display="block";
-        // Blackout
-            vidPlayer.style.filter = blackoutLevel;
-        // Remove pointer events
-            vidContainer.style.pointerEvents = "none";
-        // Gray out buttons
-            setColor(controlButtons,"gray");
-        // No button pointer
-            setPointer(controlButtons,"none");
-        // Setting video player size:
-            vidPlayer.onloadedmetadata = setVideoPlayerSize;
-        // Finish pretend loading
-            setTimeout(finishedLoading,2500);
-        // Set volume to 0.4
-            vidPlayer.volume = 0.4;
+        // Load video
+            loadVideo(vidURL);
         // Empty out the value of file picker so it triggers change event even if same file chosen
             vidPicker.value = null;
         } else {
@@ -70,11 +51,42 @@ if (window.File && window.FileReader && window.FileList) {
         }
     });
 
+// Load video function:
+function loadVideo(vidURL){
+    vidPlayer.src = vidURL;
+    // Change into loading icon
+        currentIcon.className = loadingClass;
+    // Add display message:
+        displayMsg.innerText="Cargando";
+        displayMsg.style.display="block";
+    // Blackout
+        vidPlayer.style.filter = blackoutLevel;
+    // Remove pointer events
+        vidContainer.style.pointerEvents = "none";
+    // Gray out buttons
+        setColor(controlButtons,"gray");
+    // No button pointer
+        setPointer(controlButtons,"none");
+    // Setting video player size:
+        vidPlayer.onloadedmetadata = setVideoPlayerSize;
+    // Finish pretend loading
+        setTimeout(finishedLoading,2500);
+    // Set volume to 0.4
+        vidPlayer.volume = 0.4;
+}
+
 // Listen for window resize event and adapt dimensions:
-    addEventListener("resize", (event) => {setVideoPlayerSize()});
+    addEventListener("resize", (event) => {
+    if(vidPlayer.readyState==0){
+        defaultVidSize();
+    }else{
+        setVideoPlayerSize()};
+    });
 
 // Function sets video player size depending on loaded video dimensions:
 function setVideoPlayerSize(){
+    vidContainer.style.aspectRatio="";
+        vidContainer.style.maxHeight= "";
     // landscape
     if(window.matchMedia("(orientation: landscape)").matches) {
         console.log("orientation Landscape");
@@ -208,10 +220,11 @@ function setVideoPlayerSize(){
 
 // Handling big video icon logic, blackout logic, etc.:
     function adjustCurrentIcon(){
-        console.log(vidPlayer.readyState);
         switch (true) {
             // If no vid loaded
             case vidPlayer.readyState==0:
+                // set vid player size default
+                defaultVidSize();
                 // upload icon shown
                 currentIcon.className = uploadBeatClass;
                 // display message
@@ -274,6 +287,29 @@ vidContainer.onmouseleave = function(event) {
             element.style.pointerEvents= pointer;
         });
     }
+
+// Sample videos:
+    const bigBuckBunny = document.getElementById("bigBuckBunny");
+    const elephantsDream = document.getElementById("elephantsDream");
+    bigBuckBunny.addEventListener("click", ()=>{
+        const bbbURL = "https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+        vidPlayer.pause();
+        adjustCurrentIcon();
+        loadVideo(bbbURL);
+    });
+    elephantsDream.addEventListener("click", ()=>{
+        const edURL = "https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4";
+        vidPlayer.pause();
+        adjustCurrentIcon();
+        loadVideo(edURL);
+    });
+
+    // set vid player size default
+    function defaultVidSize(){
+        vidContainer.style.aspectRatio="16/9";
+        vidContainer.style.maxHeight= "50vh";
+    };
+
 
 } else {
 alert('La API de FILE no es soportada en este navegador.');
