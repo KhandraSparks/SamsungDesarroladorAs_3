@@ -1,0 +1,29 @@
+body {
+    min-height: 100vh;
+}
+
+span{
+    color: gray;
+    font-weight: lighter;
+    font-style: italic;
+    font-size: smaller;
+}
+
+
+#submit {
+    background: #5e79de;
+    border: none;
+}
+
+
+.gradient-background {
+background: linear-gradient(240deg,deepskyblue,darkviolet,rgb(66, 66, 244));
+background-size: 180% 180%;
+animation: gradient-animation 15s ease infinite;
+}
+
+@keyframes gradient-animation {
+0% {background-position: 0% 50%;}
+50% {background-position: 100% 50%;}
+100% {background-position: 0% 50%;}
+}
