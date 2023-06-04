@@ -59,6 +59,8 @@ function loadVideo(vidURL){
     // Add display message:
         displayMsg.innerText="Cargando";
         displayMsg.style.display="block";
+    // Align self-end
+        currentIcon.style.alignSelf="self-end";
     // Blackout
         vidPlayer.style.filter = blackoutLevel;
     // Remove pointer events
@@ -128,6 +130,8 @@ function setVideoPlayerSize(){
         displayMsg.style.display="none";
     //Switch icon to play icon
         currentIcon.className = playCircleBeatClass;
+    // Center icon
+        currentIcon.style.alignSelf="center";
     //Reactivate pointer events
         setColor(controlButtons,"white");
         setPointer(controlButtons,"auto");
@@ -227,6 +231,8 @@ function setVideoPlayerSize(){
                 defaultVidSize();
                 // upload icon shown
                 currentIcon.className = uploadBeatClass;
+                // position at self-end
+                currentIcon.style.alignSelf="self-end";
                 // display message
                 displayMsg.innerText="Haz click aquí para subir un vídeo";
                 // control buttons grayed out & no pointer mouse
@@ -238,6 +244,8 @@ function setVideoPlayerSize(){
                 // visible play icon
                 currentIcon.style.display = "block";
                 currentIcon.className = playCircleBeatClass;
+                // position at center
+                currentIcon.style.alignSelf="center";
                 //change control icon
                 playBtn.firstChild.className = playClass;
                 //blackout
@@ -247,6 +255,8 @@ function setVideoPlayerSize(){
             case vidPlayer.readyState==4 && !vidPlayer.paused:
                 //change control icon
                 playBtn.firstChild.className = pauseClass;
+                // position at center
+                currentIcon.style.alignSelf="center";
                 //no visible icon
                 currentIcon.style.display = "none";
                 currentIcon.className = pauseCircleClass;
