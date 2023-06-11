@@ -5,14 +5,13 @@ import { Telefono } from "./Telefono";
 
 //Define class:
 class Persona{
-
 //Constructor:
     constructor(
         private _nombre: string,
         private _apellidos: string,
         private _edad: number,
         private _dni: string,
-        private _cumple: string,
+        private _cumple: Date,
         private _colorFavorito: string,
         private _sexo: string,
         private _direcciones: Direccion[], 
@@ -50,10 +49,10 @@ class Persona{
         this._dni = newDni;
     }
 
-    public get cumple(): string {
+    public get cumple(): Date {
         return this._cumple;
     }
-    public set cumple(newCumple:string){
+    public set cumple(newCumple:Date){
         this._cumple = newCumple;
     }
 
@@ -89,7 +88,7 @@ class Persona{
         return this._telefonos;
     }
     public set telefonos(newTelefonos: Telefono[]){
-        this._telefonos = newTelefonos ;
+        this._telefonos = newTelefonos;
     }
 
     public get notas(): string {
@@ -101,13 +100,21 @@ class Persona{
 
 // Methods:
     //New dirección and append to end of array
-    // make setter replace the whole array, then make a function that takes current array, adds new direccion, then sets the array to the new one?
-    addDireccion(this:Persona, direccionToAdd:Direccion) {
-        direccionToAdd = new Direccion("C/ La Marina", 20,1,"Sin Letra",38001,"Santa Cruz de Tenerife", "SC Tenerife");
-        this._direcciones.push(direccionToAdd);
+    addDireccion(direccionToAdd:Direccion) {
+        this.direcciones.push(direccionToAdd);
     }
     //New mail and append to end of array
+    addMail(mailToAdd:Mail) {
+        this.mails.push(mailToAdd);
+    }
     //New telefono and append to end of array
+    addTelefono(telefonoToAdd:Telefono) {
+        this.telefonos.push(telefonoToAdd);
+    }
+    //Calculate edad:
+    calculateEdad(){
+        return Math.floor((new Date().getTime() - new Date(this.cumple).getTime()) / 3.15576e+10);
+    }
 };
 
 //Export Class:
