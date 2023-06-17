@@ -2,16 +2,154 @@
 <html>
 
 <head>
-    <title>Tarea PHP - Naomi A.W.</title>
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./main.js" type="text/javascript" defer></script>
-    <link rel="stylesheet" href="./styles.css" />
+    <title>Laboratorio Final - Naomi A.W.</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Bootstrap: -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <!-- Font Awesome: -->
+    <script src="https://kit.fontawesome.com/6999a15d62.js" crossorigin="anonymous"></script>
+    <!-- My CSS & JS: -->
+    <link defer rel="stylesheet" href="./styles.css" />
+    <script defer src="./main.js" type="text/javascript"></script>
 </head>
+<body class="d-flex justify-content-center gradient-background">
+    <div id="formDiv" class="col-10 overflow-hidden shadow p-3 mb-5 rounded bg-white d-flex  text-center  align-self-center">
+        <form method="post"  action="" id="registrationForm" class="container">
+            
+            <h2 class="h1 mb-3 font-weight-normal"> Formulario de registro </h2>
 
-<body>
-    
+            <div class="row">
+                <div class="col-lg-4 position-relative">
+                    <label for="firstname" class="form-label mb-0"> Nombre </label>
+                    <div class="input-group mb-2">
+                        <input type="text" id="firstname" name="firstname" class="form-control" autocomplete="off">
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 position-relative">
+                    <label for="surname1" class="form-label mb-0"> Primer Apellido </label>
+                    <div class="input-group mb-2">
+                        <input type="text" id="surname1" name="surname1" class="form-control" autocomplete="off">
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 position-relative">
+                    <label for="surname2" class="form-label mb-0 text-nowrap"> Segundo Apellido </label>
+                    <div class="input-group mb-2">
+                        <input type="text" id="surname2" name="surname2" class="form-control" autocomplete="off">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-auto">
+                <div class="col-md-auto  position-relative">
+                    <label for="email" class="form-label mb-0"> Correo electrónico </label>
+                    <div class="input-group mb-2">
+                        <span class="input-group-text" id="inputGroupPrepend"><i class="fa-solid fa-envelope"></i></span>
+                        <input type="text" id="email" name="email" class="form-control" autocomplete="off">
+                    </div>
+                </div>
+                
+                <div class="col-md-auto position-relative">
+                    <label for="loginID" class="form-label mb-0"> Usuario </label>
+                    <div class="input-group mb-2">
+                        <span class="input-group-text" id="inputGroupPrepend"><i class="fa-solid fa-user"></i></span>
+                        <input type="text" id="loginID" name="loginID" class="form-control" autocomplete="off">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 position-relative">
+                    <label for="passwd1" class="form-label mb-0"> Contraseña </label>
+                    <div class="input-group mb-2">
+                        <span class="input-group-text" id="inputGroupPrepend"><i class="fa-solid fa-lock"></i></span>
+                        <input type="password" id="passwd1" name="passwd1" class="form-control rounded-right" autocapitalize="off" spellcheck="false" autocorrect="off">
+                        <span class="input-group-text" id="passwdVisibilityToggle1"><i class="fa-regular fa-eye-slash" id="passwdVisibilityToggleIcon1"></i></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 position-relative">
+                    <label for="passwd2" class="form-label mb-0"> Repita la contraseña </label>
+                    <div class="input-group mb-2">
+                        <span class="input-group-text" id="inputGroupPrepend"><i class="fa-solid fa-lock"></i></span>
+                        <input type="password" id="passwd2" name="passwd2" class="form-control rounded-right" autocapitalize="off" spellcheck="false" autocorrect="off">
+                        <span class="input-group-text" id="passwdVisibilityToggle2"><i class="fa-regular fa-eye-slash" id="passwdVisibilityToggleIcon2"></i></span>
+                    </div>
+                </div>
+            </div>
+<!-- FORM BUTTONS: -->
+            <br>
+            <div class="row d-flex justify-content-center align-content-center">
+                <button type="submit" name="submit" id="submit" class="btn btn-success col m-1"><i class="fa-regular fa-paper-plane"></i> Enviar </button>
+                <button type="reset" name="reset" id="reset" class="btn btn-danger col m-1"><i class="fa-solid fa-xmark"></i> Resetear </button>
+            </div>
+
+            <div class="row d-flex justify-content-center align-content-center">
+                <button type="button" name="consulta" id="consulta" class="btn btn-secondary m-1"><i class="fa-solid fa-search"></i> Consultar Registros </button>
+            </div>
+            
+        </form>
+    </div>
+
+<!-- MODALS: -->
+
+    <div class="modal fade" id="resultModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="resultModalTitle"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="resultModalBody">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <div>
+        <div class="modal fade" id="consultaModal" tabindex="-1" aria-labelledby="consultaModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="consultaModalTitle">Usuarios Registrados</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="consultaModalBody">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div>
+        <div class="modal fade" id="registroModal" tabindex="-1" aria-labelledby="registroModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registroModalTitle"> Mensaje para el usuario: </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="registroModalBody">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
 </body>
+
 
 </html>

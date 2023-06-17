@@ -1,0 +1,38 @@
+body{
+    min-height: 100vh;
+}
+
+.gradient-background {
+background: linear-gradient(240deg,rgb(6, 126, 129),darkviolet,rgb(66, 66, 244));
+background-size: 180% 180%;
+animation: gradient-animation 7s ease infinite;
+}
+
+@keyframes gradient-animation {
+0% {background-position: 0% 50%;}
+50% {background-position: 100% 50%;}
+100% {background-position: 0% 50%;}
+}
+
+p{
+    top: 5.5em;
+    z-index: 200;
+}
+
+input{
+    z-index: 1;
+    margin-left: 10px;
+}
+
+label{
+    margin-top: 20px;
+}
+
+#passwdVisibilityToggle{
+    cursor: pointer;
+}
+
+/* Remove default "visibility toggle" for passwords on Edge */
+::-ms-reveal {
+    display: none;
+}
