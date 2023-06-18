@@ -37,12 +37,18 @@ var mainFormButtons= Array.from(buttons).slice(0,3);
     passwdVisibilityToggle2.addEventListener("click", ()=> {toggleVisibility(passwd2, passwdVisibilityToggleIcon2)});
 
 // Listen for consulta button press and fetch result into div:
-    consultaButton.addEventListener("click", (e)=> {populateModal("resultModal", "POST", "./consulta.php", null)});
+    consultaButton.addEventListener("click", (e)=> {
+        togglePointerEvents (submitButton);
+        togglePointerEvents (consultaButton);
+        populateModal("resultModal", "POST", "./consulta.php", null, e)
+});
 
 // Listen for submit button press and fetch result into div:
     submitButton.addEventListener("click", (e)=> {
         e.preventDefault();
-        populateModal("resultModal", "POST", "./process_form.php", registrationForm);
+        togglePointerEvents (submitButton);
+        togglePointerEvents (consultaButton);
+        populateModal("resultModal", "POST", "./process_form.php", registrationForm, e);
     });
 
 // Listen for reset button press and remove form validation visual changes
@@ -64,7 +70,7 @@ for (const button of mainFormButtons) {
 }
 
 // Listen for modal dismissal clear form on registration success and :
-    resultModal.addEventListener("hide.bs.modal", (e)=>{onModalDismissal(e)})
+    resultModal.addEventListener("hide.bs.modal", ()=>{onModalDismissal()});
 
 //----------------------------------------------------------------------//
 //                                                                      
@@ -72,8 +78,17 @@ for (const button of mainFormButtons) {
 // 
 //----------------------------------------------------------------------//
 
+// Deactivate clicking on submit and consulta buttons:
+function togglePointerEvents (element) {
+    if (element.classList.contains("pe-none")) {
+        element.classList.remove("pe-none");
+    } else {
+        element.classList.add("pe-none");
+    }
+}
+
 // Populate modal from request result:
-    async function populateModal (resultModalID, method, PHPFile, form){
+    async function populateModal (resultModalID, method, PHPFile, form, e){
         const resultModalBS = new bootstrap.Modal(document.getElementById(resultModalID));
         resultModalBody = document.getElementById(resultModalID+"Body");
         resultModalTitle = document.getElementById(resultModalID+"Title");
@@ -94,7 +109,10 @@ for (const button of mainFormButtons) {
                 resultModalTitle.innerHTML= "Mensaje para el usuario:";
                 break;
         }
-        
+
+        togglePointerEvents (submitButton);
+        togglePointerEvents (consultaButton);
+
         resultModalBS.show();
     }
 
@@ -254,7 +272,7 @@ function buttonIconAnimation (button, animationType, addOrRemove) {
 }
 
 //
-function onModalDismissal(e){
+function onModalDismissal(){
     if (resultModalBody.innerHTML==="Registro completado con éxito."){
         resetButton.click();
     }
